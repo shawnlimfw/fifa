@@ -4,6 +4,9 @@ player_database = {}
 epl_team_database = {}
 formations_database = {}
 
+team_name = ''
+squad = {}
+
 def initilisation():
 
     def setup_player_database():
@@ -54,8 +57,50 @@ def initilisation():
     setup_epl_team_database()
     setup_formations_database()
 
+def game_setup():
 
+    def game_setup_firstpage():
+        global team_name
+        print('')
+        print('Welcome to Football Manager 2025!')
+        print('To continue, please choose a team.')
+        while True:
+            try:
+                print('')
+                print(f"{'Press:':8}{'Team':25}{'Rating'}")
+                print('-------------------------------------------------------------------------')
+                placeholder = [key for key in epl_team_database]
+                placeholder.sort()
+                for index, key in enumerate(placeholder, 1):
+                    print(f"{index:<8}{key:25}{epl_team_database[key]}")
+                print('')
+                choice = int(input('Choose your team: '))
+                if choice < 1 or choice > 20:
+                    raise ValueError
+                print('')
+                print(f"You've chosen {placeholder[choice-1]}.")
+                while True:
+                    confirm = input('Press X to confirm, or Y to go back: ')
+                    if confirm == 'X':
+                        team_name = placeholder[choice-1]
+                        print(' ')
+                        return 
+                    elif confirm == 'Y':
+                        break
+            except:
+                pass
+
+    def set_squad():
+        global team_name
+        global squad
+        for key, value in player_database.items():
+            if value['Team'] == team_name:
+                squad[key] = value
+
+    game_setup_firstpage()
+    set_squad()
 
 
 #main code starts here?
 initilisation()
+game_setup()

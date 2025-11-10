@@ -138,8 +138,23 @@ def main_menu():
         except:
                 pass
 
+def squad_page():
+    print('SQUAD')
+    print(f"{'Name':<28}{'Position':11}{'Alt Positions':16}{'Nation':22}{'Age':6}{'Played':9}{'Goals':8}{'Assists':10}{'Suspended?':13}{'Injured?':11}{'OVR':4}")
+    print('--------------------------------------------------------------------------------------------------------------------------------------------')
+    for key,value in squad.items():
+        print(f"{value['Name']:<28}{value['Position']:<11}{value['Alternative positions']:<16}{value['Nation']:<22}{value['Age']:<6}{value['Played']:<9}{value['Goals']:<8}{value['Assists']:<10}{'Yes' if value['Suspended'] else 'No':<13}{'Yes' if value['Injured'] else 'No':<11}{value['OVR']:<4}")
+    print('')
+    while True:
+        if input('Press X to go back to MAIN MENU: ') == 'X':
+            print('')
+            return
+
+
 #main code starts here?
 initilisation()
 game_setup()
 while True:
     command = main_menu()
+    if command == 1:
+        squad_page()

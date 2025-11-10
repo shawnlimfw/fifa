@@ -1,7 +1,9 @@
 import csv
 player_database = {}
+epl_team_database = {}
 
 def initilisation():
+
     def setup_player_database():
         global player_database
         with open('filtered_male_players.csv', mode='r', newline='', encoding="utf8") as file:
@@ -18,14 +20,31 @@ def initilisation():
                 player_database[identifier] = {}
                 for index, attribute in enumerate(row):
                     player_database[identifier][headers[index]] = attribute
+                for stat in ['Played', 'Goals', 'Assists']:
+                    player_database[identifier][stat] = 0
+                for stat in ['Suspended', 'Injured']:
+                    player_database[identifier][stat] = False
+  
+    def setup_epl_team_database():
+        global player_database
+        global epl_team_database
+        for key,value in player_database.items():
+            if value['League'] != 'Premier League':
+                continue
+            else:
+                if value['Team'] not in epl_team_database:
+                    epl_team_database[value['Team']] = [int(value['OVR'])]
+                else:
+                    epl_team_database[value['Team']].append(int(value['OVR']))
+        for key,value in epl_team_database.items():
+            avg = sum(value) / len(value)
+            epl_team_database[key] = round(avg, 1)
 
     setup_player_database()
+    setup_epl_team_database()
+
 
 
 #main code starts here?
 initilisation()
-
-
-
-
-            
+print(epl_team_database)

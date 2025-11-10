@@ -1,0 +1,5 @@
+player_database:
+('16161', 'Wu Yuhang'): {'Index': '16161', 'Name': 'Wu Yuhang', 'OVR': '47', 'Position': 'CDM', 'Alternative positions': '', 'Age': '23', 'Nation': 'China PR', 'League': 'CSL', 'Team': 'Zhejiang Pro', 'Played': 0, 'Goals': 0, 'Assists': 0, 'Suspended': False, 'Injured': False}
+
+epl_team_database:
+{'Manchester City': 79.4, 'Arsenal': 77.8, 'Liverpool': 75.4, 'Man Utd': 74.6, 'Spurs': 74.9, 'Aston Villa': 75.2, 'Newcastle Utd': 75.8, 'Chelsea': 76.4, 'Everton': 72.3, 'West Ham': 75.1, 'Fulham': 74.6, 'Crystal Palace': 73.1, 'Brighton': 73.2, 'Southampton': 71.6, 'AFC Bournemouth': 73.0, 'Brentford': 72.4, 'Wolves': 72.2, "Nott'm Forest": 74.4, 'Leicester City': 72.5, 'Ipswich': 72.2}

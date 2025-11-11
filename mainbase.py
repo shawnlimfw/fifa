@@ -8,6 +8,7 @@ fixtures_database = {}
 
 team_name = ''
 squad = {}
+league_table = {}
 
 money = 0
 league_ranking = 1
@@ -145,10 +146,22 @@ def initilisation():
                 for index, team in enumerate(glist, 0):
                     glist[index] = enumerated_teams[team]
 
+    def setup_league_table():
+        global league_table
+        for key, value in epl_team_database.items():
+            league_table[key] = {
+                'W':0,
+                'D':0,
+                'L':0,
+                'F':0,
+                'A':0
+            }
+
     setup_player_database()
     setup_epl_team_database()
     setup_formations_database()
     setup_fixtures_database()
+    setup_league_table()
 
 def game_setup():
 
@@ -237,6 +250,30 @@ def squad_page():
         if input('Press X to go back to MAIN MENU: ') == 'X':
             print('')
             return
+        
+def league_page():
+
+    def league_main_page():
+        print('English Premier League')
+        print(f"Matchday {matchday}/38")
+        print('')
+        print(f"{'POS':<5}{'Team':<30}{'Pl':<3}{'W':<3}{'D':<3}{'L':<3}{'F':<3}{'A':<3}{'GD':<3}{'Pts':<3}")
+        print('-------------------------------------------------------------')
+        for index, (key, value) in enumerate(league_table.items(), 1):
+            print(f"{index:<5}{key:<30}{value['W']+value['D']+value['L']:<3}{value['W']:<3}{value['D']:<3}{value['L']:<3}{value['F']:<3}{value['A']:<3}{value['F']-value['A']:<3}{value['W']*3+value['D']:<3}")
+        print('')
+        while True:
+            command = input('Press X to return to MAIN MENU: ')
+            if command == 'X':
+                print('')
+                return
+            
+    def sort_league_table():
+        global league_table
+        league_table = dict(sorted(league_table.items(), key=lambda item: (-item[1]['W']*3 - item[1]['D'], -item[1]['F']+item[1]['A'], item[0])))
+
+    sort_league_table()
+    league_main_page()
 
 def fixtures_page():
 
@@ -291,5 +328,7 @@ while True:
     command = main_menu()
     if command == 1:
         squad_page()
+    if command == 3:
+        league_page()
     if command == 4:
         fixtures_page()

@@ -16,3 +16,6 @@ fixtures_database = {
          G3:['',''],}
     GW2:
 }
+
+league_table:
+{'Manchester City':{'W':10, 'D':2, 'L':11, 'F':60, 'A':12},}

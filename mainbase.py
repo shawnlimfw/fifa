@@ -10,6 +10,10 @@ team_name = ''
 squad = {}
 league_table = {}
 
+tactics = {}
+tactics_formation = ''
+tactics_mentality = ''
+
 money = 0
 league_ranking = 1
 matchday = 1
@@ -203,8 +207,27 @@ def game_setup():
             if value['Team'] == team_name:
                 squad[key] = value
 
+    def set_league_ranking():
+        global league_ranking
+        global league_table
+        league_table = dict(sorted(league_table.items(), key=lambda item: (-item[1]['W']*3 - item[1]['D'], -item[1]['F']+item[1]['A'], item[0])))
+        for index, key in enumerate(league_table, 1):
+            if key == team_name:
+                league_ranking = index
+
+    def set_default_tactics():
+        global tactics
+        global tactics_formation
+        global tactics_mentality
+        tactics_formation = '4-3-3 (Holding)'
+        tactics_mentality = 'Balanced'
+        for index, position in enumerate(formations_database[tactics_formation], 1):
+                tactics[(index, position)] = ''
+
     game_setup_firstpage()
     set_squad()
+    set_league_ranking()
+    set_default_tactics()
 
 def main_menu():
 
@@ -250,10 +273,174 @@ def squad_page():
         if input('Press X to go back to MAIN MENU: ') == 'X':
             print('')
             return
-        
+
+def tactics_page():
+
+    def tactics_main_page():
+        while True:
+            print('TACTICS')
+            print(f"Formation: {tactics_formation} - Press Y to change")
+            print(f"Mentality: {tactics_mentality} - Press Z to change")
+            print(f"Press A to edit starting XI")
+            print('')
+            print_tactics()
+            print('')
+            while True:
+                command = input('Press X to return to MAIN MENU: ')
+                if command == 'X':
+                    print('')
+                    return
+                if command == 'Y':
+                    print('')
+                    tactics_change_formation()
+                    break
+                if command == 'Z':
+                    print('')
+                    tactics_change_mentality()
+                    break
+                if command == 'A':
+                    print('')
+                    tactics_change_tactics()
+                    break
+
+    def print_tactics():
+        print(f"{'Lineup':<9}{'Name':<28}{'Position':11}{'Alt Positions':16}{'Nation':22}{'Age':6}{'Played':9}{'Goals':8}{'Assists':10}{'Suspended?':13}{'Injured?':11}{'OVR':4}")
+        print('---------------------------------------------------------------------------------------------------------------------------------------------------')
+        for key,value in tactics.items():
+            if value == '':
+                print(f"{key[1]:<9}")
+            else:
+                print(f"{key[1]:<9}{value['Name']:<28}{value['Position']:<11}{value['Alternative positions']:<16}{value['Nation']:<22}{value['Age']:<6}{value['Played']:<9}{value['Goals']:<8}{value['Assists']:<10}{'Yes' if value['Suspended'] else 'No':<13}{'Yes' if value['Injured'] else 'No':<11}{value['OVR']:<4}")     
+
+    def tactics_change_formation():
+        global tactics_formation
+        global tactics
+        base = {'1':'3', '2':'4', '3':'5'}
+        print('FORMATION')
+        print(f"{'Press:':8}{'Formation Type'}")
+        print('-------------------------------------')
+        for key,value in base.items():
+            print(f"{key:8}{value + ' at the back'}")
+        print('')
+        while True:
+            command = input('Choose a type of formation to continue (or Press X to go back to TACTICS): ')
+            if command in base or command == 'X':
+                break
+        print('')
+        if command == 'X':
+            return
+        print(f"{base[command]} AT THE BACK")
+        print(f"{'Press:':8}{'Formation'}")
+        print('----------------------------')
+        formation_shortlist = []
+        indexes = []
+        for key, value in formations_database.items():
+            if key[0] == base[command]:
+                formation_shortlist.append(key)
+        for index, formation in enumerate(formation_shortlist, 1):
+            print(f"{index:<8}{formation}")
+            indexes.append(index)
+        print('')
+        while True:
+            new_c = input('Choose a formation (or press X to return to TACTICS): ')
+            if int(new_c) in indexes or new_c == 'X':
+                break
+        print('')
+        if new_c == 'X':
+            return
+        else:
+            tactics_formation = formation_shortlist[int(new_c)-1]
+            tactics.clear()
+            for index, position in enumerate(formations_database[tactics_formation], 1):
+                tactics[(index, position)] = ''
+            return
+
+    def tactics_change_mentality():
+        global tactics_mentality
+        print('MENTALITY')
+        print(f"Current mentality: {tactics_mentality}")
+        print('')
+        print(f"{'Press:':8}{'Mentality'}")
+        print('-------------------------------------')
+        mentalities = ['Very Defensive', 'Defensive', 'Balanced', 'Attacking', 'Very Attacking']
+        for mentality in mentalities:
+            print(f"{mentalities.index(mentality)+1:<8}{mentality}")
+        print('')
+        while True:
+            command = input('Choose a mentality to continue (or press X to go back to TACTICS): ')
+            if command in [str(1),str(2),str(3),str(4),str(5)] or command == 'X':
+                break
+        print('')
+        if command == 'X':
+            return
+        tactics_mentality = mentalities[int(command)-1]
+
+    def tactics_change_tactics():
+        while True:
+            print('STARTING XI')
+            print('Press the letter on the left to edit each position')
+            print('')
+            print(f"{'Press':<8}{'Lineup':<9}{'Name':<28}{'Position':11}{'Alt Positions':16}{'Nation':22}{'Age':6}{'Played':9}{'Goals':8}{'Assists':10}{'Suspended?':13}{'Injured?':11}{'OVR':4}")
+            print('-----------------------------------------------------------------------------------------------------------------------------------------------------------')
+            for index, (key,value) in enumerate(tactics.items(), 1):
+                if value == '':
+                    print(f"{index:<8}{key[1]:<9}")
+                else:
+                    print(f"{index:<8}{key[1]:<9}{value['Name']:<28}{value['Position']:<11}{value['Alternative positions']:<16}{value['Nation']:<22}{value['Age']:<6}{value['Played']:<9}{value['Goals']:<8}{value['Assists']:<10}{'Yes' if value['Suspended'] else 'No':<13}{'Yes' if value['Injured'] else 'No':<11}{value['OVR']:<4}")
+            print('')
+            while True:
+                exit = False
+                command = input('Press X to return to TACTICS: ')
+                if command == 'X':
+                    print('')
+                    exit = True
+                    break
+                if command == '':
+                    continue
+                if int(command) in list(range(1, 12)):
+                    print('')
+                    tactics_change_position(int(command))
+                    break
+            if exit == True:
+                return
+
+    def tactics_change_position(command):
+        global tactics
+        for key, value in tactics.items():
+            if key[0] == command:
+                position = key
+        print(f"CHOOSE {position[1]}:")
+        print(f"Press the number on the left to choose the player")
+        print('')
+        print(f"{'Press':<8}{'Name':<28}{'Position':11}{'Alt Positions':16}{'Nation':22}{'Age':6}{'Played':9}{'Goals':8}{'Assists':10}{'Suspended?':13}{'Injured?':11}{'OVR':4}")
+        print('-----------------------------------------------------------------------------------------------------------------------------------------------------------')
+        for index, (key,value) in enumerate(squad.items(), 1):
+            print(f"{index:<8}{value['Name']:<28}{value['Position']:<11}{value['Alternative positions']:<16}{value['Nation']:<22}{value['Age']:<6}{value['Played']:<9}{value['Goals']:<8}{value['Assists']:<10}{'Yes' if value['Suspended'] else 'No':<13}{'Yes' if value['Injured'] else 'No':<11}{value['OVR']:<4}")
+        print('')
+        while True:
+            command = input('Press X to go back to STARTING XI: ')
+            if command == 'X':
+                print('')
+                return
+            try:
+                if int(command) in list(range(1,len(squad)+1)):
+                    player = list(squad)[int(command)-1]
+                    for key, value in tactics.items():
+                        if value != '':
+                            if value['Index'] == player[0]:
+                                tactics[key] = ''
+                    tactics[position] = squad[player]
+                    print('')
+                    return
+            except:
+                pass
+
+    tactics_main_page()
+
 def league_page():
 
     def league_main_page():
+
         print('English Premier League')
         print(f"Matchday {matchday}/38")
         print('')
@@ -261,6 +448,8 @@ def league_page():
         print('-------------------------------------------------------------')
         for index, (key, value) in enumerate(league_table.items(), 1):
             print(f"{index:<5}{key:<30}{value['W']+value['D']+value['L']:<3}{value['W']:<3}{value['D']:<3}{value['L']:<3}{value['F']:<3}{value['A']:<3}{value['F']-value['A']:<3}{value['W']*3+value['D']:<3}")
+            if key == team_name:
+                update_league_ranking(index)
         print('')
         while True:
             command = input('Press X to return to MAIN MENU: ')
@@ -271,6 +460,10 @@ def league_page():
     def sort_league_table():
         global league_table
         league_table = dict(sorted(league_table.items(), key=lambda item: (-item[1]['W']*3 - item[1]['D'], -item[1]['F']+item[1]['A'], item[0])))
+
+    def update_league_ranking(index):
+        global league_ranking
+        league_ranking = index
 
     sort_league_table()
     league_main_page()
@@ -328,6 +521,8 @@ while True:
     command = main_menu()
     if command == 1:
         squad_page()
+    if command == 2:
+        tactics_page()
     if command == 3:
         league_page()
     if command == 4:

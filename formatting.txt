@@ -19,3 +19,6 @@ fixtures_database = {
 
 league_table:
 {'Manchester City':{'W':10, 'D':2, 'L':11, 'F':60, 'A':12},}
+
+tactics:
+{(1, 'ST') : {'Index': '38', 'Name': 'Bruno Fernandes', 'OVR': '87', 'Position': 'CAM', 'Alternative positions': 'CM', 'Age': '30', 'Nation': 'Portugal', 'League': 'Premier League', 'Team': 'Man Utd', 'Played': 0, 'Goals': 0, 'Assists': 0, 'Suspended': False, 'Injured': False}, ('102', 'Matthijs de Ligt'): {'Index': '102', 'Name': 'Matthijs de Ligt', 'OVR': '84', 'Position': 'CB', 'Alternative positions': '', 'Age': '25', 'Nation': 'Holland', 'League': 'Premier League', 'Team': 'Man Utd', 'Played': 0, 'Goals': 0, 'Assists': 0, 'Suspended': False, 'Injured': False},}

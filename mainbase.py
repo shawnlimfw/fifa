@@ -1,5 +1,6 @@
 import csv
 import random
+import time
 
 player_database = {}
 epl_team_database = {}
@@ -19,6 +20,7 @@ transfer_market = {}
 transfer_market_seasonal = {1:{},5:{},9:{},13:{},17:{},21:{},25:{},29:{},33:{},37:{}}
 
 league_ranking = 1
+training_records = {num:True for num in range(1, 39)}
 matchday = 1
 
 
@@ -520,6 +522,7 @@ def league_page():
 def fixtures_page():
 
     def fixtures_main_page():
+        global matchday
         command = 'X'
         while True:
             if command == 'Z':
@@ -582,11 +585,12 @@ def transfers_page():
             placeholder = {}
             print('TRANSFERS')
             print('Viewing TRANSFER MARKET')
+            print(f"{(seasonal + 4) - matchday} matchdays left to market refresh")
             print('Press Y to sell squad players')
             print('Press the number on the left to buy player')
             print('')
             print(f"{'Press':<8}{'Name':<28}{'Position':11}{'Alt Positions':16}{'Nation':22}{'Age':6}{'Team':<28}{'OVR':4}")
-            print('-----------------------------------------------------------------------------------------------------------------------------------------------------------')
+            print('----------------------------------------------------------------------------------------------------------------------------')
             for index, (key,value) in enumerate(transfer_market_seasonal[seasonal].items(), 1):
                 print(f"{index:<8}{value['Name']:<28}{value['Position']:<11}{value['Alternative positions']:<16}{value['Nation']:<22}{value['Age']:<6}{value['Team']:<28}{value['OVR']:<4}")
                 placeholder[index] = key
@@ -617,6 +621,7 @@ def transfers_page():
         while True:
             command = input('Press X to go back to TRANSFER MARKET: ')
             if command == 'A':
+                print('')
                 squad[player] = player_database[player]
                 squad[player]['Team'] = team_name
                 for key, value in transfer_market_seasonal.items():
@@ -631,10 +636,11 @@ def transfers_page():
 
     def decide_transfer_market_seasonal():
         m = matchday
-        if m - 1 % 4 == 0:
-            return m
-        else:
-            m -= 1
+        while True:
+            if m - 1 % 4 == 0:
+                return m
+            else:
+                m -= 1
 
     def transfers_sell_page():
         while True:
@@ -684,6 +690,60 @@ def transfers_page():
         
     transfers_main_page()
 
+def training_page():
+    
+    def training_main_page():
+        print('TRAINING')
+        if training_records[matchday] == False:
+            print(f"Training for Matchday {matchday} is completed")
+        else:
+            print(f"Press Y to procees with Matchday {matchday} training")
+
+        while True:
+            command = input('Press X to go back to MAIN MENU: ')
+            if command == 'X':
+                print('')
+                return
+            elif command == 'Y':
+                print('')
+                training_matchday_page()
+                return
+            
+    def training_matchday_page():
+        global squad
+        loads = ['Lacing up boots', 'Warming up', 'Perfecting first touches', 'Testing keeper reflexes', 'Cooling down']
+        for load in loads:
+            print(load, end="", flush=True)
+            for dot in '........':
+                print(dot, end="", flush=True)
+                time.sleep(0.3)
+            print('')
+        print('')
+
+        train = []
+        for key, value in squad.items():
+            train.append(key)
+        random.shuffle(train)
+        success_train = train[:random.randint(1,2)]
+        for player in success_train:
+            squad[player]['OVR'] = str(int(squad[player]['OVR']) + 1)
+        print('TRAINING REPORT')
+        for player in success_train:
+            print(f"{player[1]:28} OVR +1")
+        print('')
+
+        while True:
+            command = input('Press X to go back to MAIN MENU: ')
+            if command == 'X':
+                print('')
+                return
+            
+    training_main_page()
+
+
+
+def finances_page():
+    pass
 
 #main code starts here
 initilisation()
@@ -700,3 +760,7 @@ while True:
         fixtures_page()
     if command == 5:
         transfers_page()
+    if command == 6:
+        finances_page()
+    if command == 7:
+        training_page()

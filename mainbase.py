@@ -16,6 +16,8 @@ tactics_formation = ''
 tactics_mentality = ''
 
 money = 0
+income = 0
+expenditure = 0
 transfer_market = {}
 transfer_market_seasonal = {1:{},5:{},9:{},13:{},17:{},21:{},25:{},29:{},33:{},37:{}}
 
@@ -615,6 +617,7 @@ def transfers_page():
         global squad
         global transfer_market_seasonal
         global money
+        global expenditure
         print('CONFIRM')
         print(f"Buy {player[1]} for $xx?")
         print('Press A to confirm')
@@ -628,6 +631,7 @@ def transfers_page():
                     if player in value:
                         del value[player]
                 money -= 0
+                expenditure += 0
                 return
             if command == 'X':
                 print('')
@@ -683,6 +687,7 @@ def transfers_page():
             if command == 'A':
                 del squad[player]
                 money += 0
+                income += 0
                 return
             if command == 'X':
                 print('')
@@ -743,7 +748,16 @@ def training_page():
 
 
 def finances_page():
-    pass
+    print('FINANCES')
+    print(f"Income: ${income:.0f}")
+    print(f"Expenditure: ${expenditure:.0f}")
+    print(f"Net spend: ${income - expenditure:.0f}")
+    print('')
+    while True:
+        command = input('Press X to go back to MAIN MENU: ')
+        if command == 'X':
+            print('')
+            return
 
 #main code starts here
 initilisation()

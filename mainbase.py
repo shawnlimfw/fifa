@@ -2,6 +2,7 @@ import csv
 import random
 import time
 import math
+import statistics
 
 player_database = {}
 epl_team_database = {}
@@ -730,7 +731,7 @@ def training_page():
         if training_records[matchday] == False:
             print(f"Training for Matchday {matchday} is completed")
         else:
-            print(f"Press Y to procees with Matchday {matchday} training")
+            print(f"Press Y to proceed with Matchday {matchday} training")
 
         while True:
             command = input('Press X to go back to MAIN MENU: ')
@@ -744,6 +745,8 @@ def training_page():
             
     def training_matchday_page():
         global squad
+        global training_records
+        training_records[matchday] = False
         loads = ['Lacing up boots', 'Warming up', 'Perfecting first touches', 'Testing keeper reflexes', 'Cooling down']
         for load in loads:
             print(load, end="", flush=True)
@@ -754,15 +757,21 @@ def training_page():
         print('')
 
         train = []
+        success_train = []
         for key, value in squad.items():
             train.append(key)
-        random.shuffle(train)
-        success_train = train[:random.randint(1,2)]
+        for item in train:
+            success = random.randint(1, int(squad[item]['Age'])**4)
+            if success < 26000:
+                success_train.append(item)
         for player in success_train:
             squad[player]['OVR'] = str(int(squad[player]['OVR']) + 1)
         print('TRAINING REPORT')
-        for player in success_train:
-            print(f"{player[1]:28} OVR +1")
+        if len(success_train) == 0:
+            print('No progress made.')
+        else:
+            for player in success_train:
+                print(f"{player[1]:28} OVR +1")
         print('')
 
         while True:

@@ -1,0 +1,541 @@
+1,Man Utd,208.46
+2,Paris Saint-Germain,202.49
+3,Manchester City,181.42
+4,Real Madrid,152.05
+5,Liverpool,126.42
+6,Chelsea,120.25
+7,Juventus,110.52
+8,Milan,108.49
+9,FC Barcelona,103.86
+10,Arsenal,96.32
+11,Bayern,89.06
+12,Spurs,81.28
+13,Newcastle Utd,75.48
+14,Napoli,71.36
+15,RB Leipzig,67.83
+16,Inter,61.63
+17,Atlético Madrid,58.29
+18,Aston Villa,52.76
+19,Valencia,51
+20,Bayer Leverkusen,50.7
+21,Borussia Dortmund,50.5
+22,Al Hilal,46.96
+23,West Ham,46.75
+24,Olympique Lyonnais,43.44
+25,Al Nassr,43.41
+26,Al Ahli,38.34
+27,Atalanta,38.08
+28,Leicester City,37.22
+30,Al Ittihad,35.63
+31,Crystal Palace,35.21
+32,AS Monaco,35.15
+33,Brighton,34.9
+34,Wolves,34.46
+35,VfL Wolfsburg,34.46
+36,Olympique de Marseille,32.94
+38,Sevilla,29.52
+39,TSG Hoffenheim,29.51
+40,Eintracht Frankfurt,29.18
+41,Everton,29.15
+42,Feyenoord,28.7
+43,Villareal,27.99
+44,Bologna,27.44
+45,Leeds United,27
+48,Southampton,25.58
+50,Ajax,25.03
+52,SL Benfica,24.89
+54,AS Roma,24.21
+57,PSV,22.37
+58,Fulham,22.09
+64,OGC Nice,19.72
+65,Fiorentina,19.58
+66,Hamburger SV,19.57
+67,VfB Stuttgart,19.21
+69,Royal Antwerp,18.46
+72,Brentford,18.36
+74,Club Brugge,18.34
+75,Sporting,18.33
+77,AFC Bournemouth,18.03
+78,Stade Rennais FC,17.99
+80,SC Freiburg,17.83
+82,Celtic,17.68
+85,Nott'm Forest,17.33
+86,LOSC Lille,17
+87,River Plate,16.99
+88,FC Red Bull Salzburg,16.99
+89,FC Porto,16.99
+90,Borussia Mönchengladbach,16.69
+92,R.S.C Anderlecht,16.22
+93,Lazio,16.06
+95,Athletic Bilbao,15.73
+97,Torino,15.61
+98,Burnley,15.5
+100,Boca Juniors,15.01
+102,Hannover 96,14.82
+103,Union Berlin,14.46
+104,FC Utrecht,14.43
+105,Racing Club de Lens,14.14
+106,Genk,14.01
+107,Real Betis,13.65
+108,Watford,13.58
+109,Genoa,13.39
+110,Real Sociedad,13.39
+111,Gent,13.27
+112,SV Werder Bremen,13.01
+113,Sheffield United,12.52
+114,FC Nantes,12.11
+115,Sporting de Braga,11.9
+116,Norwich,11.89
+117,Al Shabab,11.77
+118,Rangers,11.73
+119,West Bromwich Albion,11.71
+120,FC Augsburg,11.4
+121,FC København,11.19
+122,RC Strasbourg Alsace,11.16
+123,Luton Town,11.15
+124,Stade de Reims,10.61
+125,Standard Liège,10.54
+126,Udinese,10.48
+127,Montpellier HSC,10
+128,Celta Vigo,10
+129,FC Midtjylland,9.99
+130,Independiente,9.52
+131,Hertha BSC,9.46
+132,Salernitana,9.45
+133,AZ,9.27
+134,Sampdoria,9.27
+135,Toulouse FC,9.25
+136,Almería,9.22
+137,Sassuolo,8.99
+138,Mainz 05,8.84
+139,FC Lorient,8.67
+140,Frosione,8.67
+141,Swansea City,8.6
+142,FC Schalke 04,8.54
+143,Palermo,8.5
+144,BSC Young Boys,8.49
+145,Fortuna Düsseldorf,8.39
+146,Blackburn Rovers,8.38
+147,FC Köln,8.36
+148,Stade Brestois 29,8.26
+149,Union SG,8.22
+150,Estudiantes,8.18
+151,Racing Club,8.03
+152,Levante,7.86
+153,Parma,7.81
+154,Middlesbrough,7.8
+155,Lecce,7.72
+156,Málaga,7.72
+157,AS Saint-Étienne,7.52
+158,SK Rapid Wien,7.48
+159,Cardiff City,7.44
+160,Bordeaux,7.44
+161,Twente,7.41
+162,Como,7.3
+163,Monza,7.18
+164,Spezia,7.08
+165,Getafe,7.03
+166,Cagliari,7
+167,Angers SCO,6.87
+168,FC Metz,6.87
+169,Hammarby IF,6.86
+170,SK Sturm Graz,6.8
+171,San Lorenzo,6.72
+172,Bristol City,6.63
+173,Malmö FF,6.56
+174,1. FC Heidenheim,6.52
+175,FC Basel,6.51
+176,VfL Bochum,6.5
+177,Paris FC,6.48
+178,Lanús,6.46
+179,LASK,6.43
+180,Ulsan Hyundai,6.43
+181,Rosenborg,6.38
+182,Clermont Foot,6.26
+183,Granada,6.23
+184,Auxerre,6.12
+185,Hellas Verona,6.12
+186,SM Caen,6.08
+187,Vélez Sarsfield,5.88
+188,Cremonese,5.87
+189,PEC Zwolle,5.86
+190,Fortuna Sittard,5.84
+191,Deportivo La Coruña,5.82
+192,Jeonbuk Hyundai Motors,5.78
+193,FC Seoul,5.76
+194,NEC Nijmegen,5.72
+195,Djurgårdens IF,5.56
+196,En Avant Guingamp,5.55
+197,Eibar,5.54
+198,Pisa,5.53
+199,Brøndby IF,5.5
+200,Havre AC,5.49
+201,Talleres,5.43
+202,Darmstadt 98,5.38
+203,Las Palmas,5.36
+204,Sparta Rotterdam,5.31
+205,Charleroi,5.29
+206,AIK,5.2
+207,Legia Warszawa,5.17
+208,FK Austria Wien,5.14
+209,Melbourne Victory,5.1
+210,Molde,5.07
+211,Daejeon Citizen,5.03
+212,Vitória de Guimarães,5.03
+213,1. FC Nürnberg,5.01
+214,Venezia,4.99
+216,FC Ingolstadt 04,4.98
+217,FC Sion,4.98
+218,FC St. Pauli,4.95
+219,Stoke City,4.95
+220,Espanyol,4.95
+221,Lech Poznań,4.93
+222,Birmingham City,4.81
+223,Damac,4.79
+224,AC Ajaccio,4.75
+225,SC Paderborn,4.73
+226,FCSB,4.72
+227,Al Wehda,4.64
+228,Empoli,4.63
+229,Groningen,4.62
+230,Shandong Luneng Taishan,4.61
+231,Rosario Central,4.59
+232,Cercle Brugge,4.56
+233,BK Häcken,4.55
+234,Queens Park Rangers,4.54
+235,Beerschot,4.53
+236,Bodø/Glimt,4.5
+237,Holstein Kiel,4.49
+238,FC Luzern,4.47
+239,Servette FC,4.47
+240,Sunderland,4.46
+241,Amiens SC,4.45
+242,Ettifaq FC,4.42
+243,Bari,4.39
+244,Mechelen,4.38
+245,Coventry City,4.36
+246,Al Taawoun,4.29
+247,Willem II,4.28
+248,Huracán,4.27
+249,Leuven,4.25
+250,Defensa y Justicia,4.24
+251,Huddersfield Town,4.2
+252,Sint-Truiden,4.19
+253,SC Heerenveen,4.11
+254,Osasuna,4.08
+255,Grasshopper,4.07
+256,Sporting de Gijón,4.06
+257,IFK Norrköping,4.04
+258,Sydney FC,4.02
+259,NAC Breda,4.01
+260,Kortrijk,3.97
+261,Preston North End,3.97
+262,Grenoble Foot 38,3.97
+263,Leganés,3.95
+264,Sheffield Wednesday,3.87
+265,FC Zürich,3.84
+266,Newell’s,3.79
+267,Zagłębie Lubin,3.78
+268,Melbourne City,3.78
+269,Al Fayha,3.77
+270,Alavés,3.76
+271,Banfield,3.75
+272,Hull City,3.74
+273,Al-Fateh,3.73
+274,RKC Waalwijk,3.72
+275,Gimnasia,3.72
+276,Raków Częstochowa,3.7
+277,Famalicão,3.7
+278,FC St. Gallen,3.69
+279,Millwall,3.64
+280,CFR Cluj,3.63
+281,Cracovia,3.56
+282,Boavista,3.56
+283,Brescia,3.55
+284,Rio Ave,3.53
+285,Rongcheng FC,3.53
+286,Beijing Sinobo Guoan,3.51
+287,Go Ahead Eagles,3.48
+288,Arminia Bielefeld,3.47
+289,Shanghai Greenland Shenhua,3.46
+290,FC Lugano,3.43
+291,Aarhus GF,3.42
+292,FC Nordsjælland,3.41
+293,Wehen Wiesbaden,3.4
+294,Ipswich,3.39
+295,Dender EH,3.38
+296,Derby County,3.38
+297,Heracles Almelo,3.35
+298,KV Westerlo,3.32
+299,Greuther Fürth,3.31
+300,Pogoń Szczecin,3.31
+301,Laval MFC,3.24
+302,Randers FC,3.22
+303,Dynamo Dresden,3.22
+304,Modena,3.19
+305,Unión,3.16
+306,Brisbane Roar,3.16
+307,1. FC Kaiserslautern,3.14
+308,Catanzaro,3.11
+309,Jeju United,3.09
+310,Girona,3.08
+311,Wisła Kraków Śląsk Wrocław,3.07
+312,Argentinos Jrs,3.06
+313,SK Brann,3.04
+314,Godoy Cruz,3.03
+315,Lillestrøm,3.02
+316,Gimcheon Sangmu,2.99
+317,Valladolid,2.95
+318,Zhejiang Pro,2.94
+319,Wigan Athletic,2.94
+320,Al Raed,2.92
+321,Gangwon FC,2.89
+322,SC Bastia,2.89
+323,Belgrano,2.88
+324,Al Riyadh,2.88
+325,Eintracht Braunschweig,2.88
+326,Wolfsberger AC,2.87
+327,Lausanne-Sport,2.87
+328,Universitatea Craiova,2.85
+329,Moreirense,2.84
+330,FC Annecy,2.83
+331,1. FC Magdeburg,2.82
+332,SV Sandhausen,2.82
+333,Reggiana,2.81
+334,Silkeborg IF,2.81
+335,Mallorca,2.81
+336,Rayo Vallecano,2.81
+337,Aberdeen,2.78
+338,Daegu FC,2.78
+339,ATK Mohun Bagan,2.77
+340,Pau FC,2.76
+341,Cosenza,2.73
+342,Perth Glory,2.7
+343,Sepsi Sfântu Gheorghe,2.69
+344,Tigre,2.68
+345,Rodez Averyron,2.66
+346,Mumbai City FC,2.64
+347,Shanghai Port,2.62
+348,Pohang Steelers,2.59
+349,Heart of Midlothian,2.59
+350,Karlsruher SC,2.56
+351,Incheon United,2.56
+352,Hansa Rostock,2.55
+353,Südtirol,2.55
+354,Macarthur FC,2.55
+355,IF Elfsborg,2.55
+356,Adelaide United,2.54
+357,Kolding IF,2.54
+358,Blackpool,2.54
+359,Jagiellonia Białystok,2.54
+360,Hibernian,2.54
+361,IFK Göteborg,2.53
+362,Rapid București,2.52
+363,Gil Vicente,2.5
+364,Red Star FC,2.5
+365,Piast Gliwice,2.5
+366,USL Dunkerque,2.49
+367,Viking,2.46
+368,Viborg FF,2.44
+369,Almere City FC,2.44
+370,Sarpsborg 08,2.44
+371,Atlético Tucumán,2.44
+372,VfL Osnabrück,2.44
+373,Barnsley,2.44
+374,Henan Jianye,2.42
+375,Peterborough,2.42
+376,Changchun Yatai,2.39
+377,Suwon FC,2.39
+378,Wuhan 3 Towns,2.39
+379,Bolton Wanderers,2.38
+380,Central Córdoba,2.37
+381,Cittadella,2.36
+382,Gwangju,2.3
+383,Zaragoza,2.3
+384,SV Elversberg,2.29
+385,Jahn Regensburg,2.28
+386,WSG Tirol,2.27
+387,Independiente Rivadavia,2.24
+388,Charlton Athletic,2.24
+389,Fredrikstad,2.21
+390,Tenerife,2.21
+391,Rot-Weiss Essen,2.21
+392,Austria Klagenfurt,2.21
+393,FC Winterthur,2.19
+394,Al-Kholood,2.18
+395,WS Wanderers,2.18
+396,Strømsgodset,2.18
+397,Tianjin TEDA,2.18
+398,Al Okhdood,2.17
+399,AVS,2.13
+400,Lechia Gdańsk,2.09
+401,SCR Altach,2.09
+402,Odds BK,2.08
+403,Farul Constanța,2.02
+404,TSV Hartberg,2.02
+405,Al Khaleej,2.01
+406,Erzgebirge Aue,2
+407,Preußen Münster,1.98
+408,Borussia Dortmund II,1.94
+409,Wellington Phoenix,1.94
+410,Fleetwood Town,1.94
+411,Santa Clara,1.94
+412,Górnik Zabrze,1.91
+413,CD Nacional,1.91
+414,Estoril,1.89
+415,Platense,1.89
+416,Oxford United,1.86
+417,1860 Munchen,1.86
+418,Estrela Amadora,1.85
+419,Cádiz,1.85
+420,Widzew Łódź,1.84
+421,Córdoba CF,1.83
+422,Saarbrucken,1.82
+423,Viktoria Koln,1.8
+424,Plymouth Argyle,1.79
+425,Newcastle Jets,1.79
+426,Rotherham United,1.77
+427,SSV Ulm,1.77
+428,Portsmouth,1.75
+429,Huesca,1.75
+430,Deportivo Riestra,1.74
+431,Brommapojkarna,1.74
+432,Kerala Blasters,1.74
+433,Instituto,1.72
+434,Racing Santander,1.7
+435,Meizhou Hakka,1.69
+436,Radomiak Radom,1.69
+437,Korona Kielce,1.67
+438,Al-Qadsiah,1.67
+439,Real Oviedo,1.66
+440,Reading,1.65
+441,Bengaluru FC,1.64
+442,Lincoln City,1.63
+443,East Bengal,1.61
+444,Wycombe Wanderers,1.61
+445,KFUM Oslo,1.61
+446,Casa Pia,1.61
+447,Cangzhou Lions,1.6
+448,Soenderjyske Fodbold,1.6
+449,Wrexham,1.6
+450,Barracas Central,1.59
+451,Western United,1.59
+452,Tromsø,1.58
+453,Grazer AK,1.58
+454,Blau-Weiss Linz,1.56
+455,Stockport County,1.56
+456,Mansfield Town,1.54
+457,Shenzhen Peng City,1.53
+458,Arouca,1.53
+459,Yverdon Sport,1.52
+460,Quingdao West Coast,1.51
+461,Port Vale,1.5
+462,Universitatea Cluj,1.5
+463,Sarmiento,1.49
+464,Elche,1.49
+465,GAIS,1.49
+466,Västerås SK,1.49
+467,Burton Albion,1.47
+468,Bristol Rovers,1.47
+469,Hamarkameratene,1.47
+470,Puszcza,1.45
+471,Halmstads BK,1.44
+472,Mjällby AI,1.43
+473,Kristiansund,1.42
+474,Central Coast Mariners,1.42
+475,IK Sirius,1.42
+476,Milton Keynes Dons,1.42
+477,Salford City,1.42
+478,Chennaiyin FC,1.42
+479,Cartagena,1.42
+480,Motherwell,1.41
+481,IFK Värnamo,1.41
+482,UTA Arad,1.39
+483,Otelul Galati,1.39
+484,Kalmar FF,1.38
+485,Leyton Orient,1.38
+486,Shrewsbury Town,1.38
+487,Botoșani,1.38
+488,Kilmarnock,1.37
+489,SV Waldhof Mannheim,1.36
+490,Nantong Zhiyun,1.35
+491,FC Martigues,1.35
+492,Farense,1.34
+493,Sandefjord,1.34
+494,Lyngby BK,1.33
+495,Haugesund,1.33
+496,Quingdao Hainiu,1.3
+497,Dundee United,1.3
+498,St Johnstone,1.3
+499,Castellón,1.29
+500,Dundee,1.27
+501,Vejle Boldklub,1.26
+502,Albacete,1.26
+503,Mirandés,1.26
+504,Cambridge United,1.25
+505,Cheltenham Town,1.25
+506,Exeter City,1.25
+507,Bradford City,1.25
+508,FC Petrolul,1.25
+509,> St Mirren,1.25
+510,Chesterfield,1.24
+511,Burgos,1.24
+512,Northampton Town,1.22
+513,Ross County,1.22
+514,Gillingham,1.21
+515,Notts County,1.21
+516,Unterhaching,1.17
+517,Walsall,1.17
+518,Stevenage,1.16
+519,Tranmere Rovers,1.15
+520,Politehnica Iasi,1.15
+521,Crawley Town,1.13
+522,Accrington,1.13
+523,Dinamo Bucuresti,1.12
+526,Grimsby Town,1.1
+527,PGE Stal Mielec,1.07
+528,Swindon Town,1.07
+529,Doncaster,1.07
+530,Racing de Ferrol,1.07
+531,FC Hermannstadt,1.06
+533,Odisha FC,1.05
+534,Morecambe,1.04
+535,Bromley,1.04
+536,Carlisle United,1
+538,AFC Wimbledon,0.99
+539,Gloria Buzău,0.99
+540,Harrogate Town,0.97
+541,SC Verl,0.97
+542,FC Goa,0.95
+544,Eldense,0.92
+546,Alemannia Aachen,0.91
+547,Colchester United,0.9
+548,Barrow,0.9
+549,Jamshedpur FC,0.89
+550,Punjab FC,0.85
+551,Newport County,0.84
+552,VfB Stuttgart II,0.83
+553,Crewe Alexandra,0.83
+555,Hyderabad FC,0.82
+557,Energie Cottbus,0.78
+558,Shamrock Rovers,0.74
+559,Unirea Slobozia,0.74
+560,Northeast United,0.72
+561,Derry City,0.68
+562,Hannover 96 II,0.66
+563,Dundalk,0.66
+567,St Patrick’s Athletic,0.58
+568,Carrarese Calcio,0.58
+569,Cesena,0.58
+570,Mantova,0.58
+571,SS Juve Stabia,0.58
+575,Sligo Rovers,0.48
+577,Bohemians,0.46
+578,Waterford,0.45
+579,Drogheda,0.44
+581,Shelbourne,0.43
+582,Galway United,0.42
+589,Auckland FC,0.33
+590,Mohammedan,0.33
+591,GKS Katowic,0.33
+592,Motor Lublin,0.33

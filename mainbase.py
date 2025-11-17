@@ -8,6 +8,7 @@ player_database = {}
 epl_team_database = {}
 formations_database = {}
 fixtures_database = {}
+teams_budget_database = {}
 
 team_name = ''
 squad = {}
@@ -50,7 +51,14 @@ def initilisation():
                     player_database[identifier][stat] = 0
                 for stat in ['Suspended', 'Injured']:
                     player_database[identifier][stat] = False
-  
+    
+    def setup_teams_budget_database():
+        global teams_budget_database
+        with open('filtered_teams_budget.csv', mode='r', newline='', encoding="utf8") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                teams_budget_database[row[1]] = int(float(row[2])*1000000)
+
     def setup_epl_team_database():
         global player_database
         global epl_team_database
@@ -64,7 +72,7 @@ def initilisation():
                     epl_team_database[value['Team']].append(int(value['OVR']))
         for key,value in epl_team_database.items():
             avg = sum(value) / len(value)
-            epl_team_database[key] = round(avg, 1)
+            epl_team_database[key] = [round(avg, 1), teams_budget_database[key]]
 
     def setup_formations_database():
         global formations_database
@@ -171,6 +179,7 @@ def initilisation():
             }
 
     setup_player_database()
+    setup_teams_budget_database()
     setup_epl_team_database()
     setup_formations_database()
     setup_fixtures_database()
@@ -186,12 +195,12 @@ def game_setup():
         while True:
             try:
                 print('')
-                print(f"{'Press:':8}{'Team':25}{'Rating'}")
-                print('-------------------------------------------------------------------------')
+                print(f"{'Press:':8}{'Team':25}{'Rating':9}{'Starting Budget'}")
+                print('-----------------------------------------------------------------')
                 placeholder = [key for key in epl_team_database]
                 placeholder.sort()
                 for index, key in enumerate(placeholder, 1):
-                    print(f"{index:<8}{key:25}{epl_team_database[key]}")
+                    print(f"{index:<8}{key:<25}{epl_team_database[key][0]:<9}${epl_team_database[key][1]:,}")
                 print('')
                 choice = int(input('Choose your team: '))
                 if choice < 1 or choice > 20:
@@ -232,6 +241,10 @@ def game_setup():
         tactics_mentality = 'Balanced'
         for index, position in enumerate(formations_database[tactics_formation], 1):
                 tactics[(index, position)] = ''
+
+    def set_money():
+        global money
+        money = epl_team_database[team_name][1]
 
     def set_transfer_market():
 
@@ -283,6 +296,7 @@ def game_setup():
     set_league_ranking()
     set_default_tactics()
     set_transfer_market()
+    set_money()
 
 def main_menu():
 

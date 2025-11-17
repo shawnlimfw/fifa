@@ -1,18 +1,29 @@
 import csv
+import re
 
-# Step 1: Read the CSV into memory
-rows = []
-with open("teams_budget.csv", newline="", encoding="utf-8") as f:
-    reader = csv.reader(f)
+input_file = "teams_budget.csv"
+output_file = "filtered_teams_budget.csv"
+
+with open(input_file, "r", newline="", encoding="utf-8") as infile, \
+     open(output_file, "w", newline="", encoding="utf-8") as outfile:
+
+    reader = csv.reader(infile)
+    writer = csv.writer(outfile)
+
     for row in reader:
-        rows.append(row)
+        rank, club, value = row
 
-# Step 2: Modify the data in memory
-# Example: change column 1 of row 2
-for row in rows:
-    row[0].replace('2', '3')
+        # 1. Skip rows containing "(W)"
+        if "(W)" in club:
+            continue
 
-# Step 3: Write it back
-with open("teams_budget.csv", "w", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f)
-    writer.writerows(rows)
+        # 2. Remove currency symbols and commas
+        clean_value = re.sub(r"[£€$]", "", value)  # remove symbols and commas
+        clean_value = clean_value.replace(",", ".")
+        clean_value = clean_value.replace("M", "")  # remove M at the end
+
+        # 3. Convert to float
+        # clean_value = float(clean_value)
+
+        # Write cleaned row
+        writer.writerow([rank, club, clean_value])

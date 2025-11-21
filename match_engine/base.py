@@ -1,5 +1,10 @@
 import csv
 
+#match_engine is a folder to simulate the match engine between teams
+#using real-life scorelines from 15/16 to 20/21 epl seasons and team ratings in FIFA 16-22,
+#an algorithm is created to dictate how teams perform based on their relative squad strength
+#sorted_weights.csv is created and used for mainbase.py in the main game
+
 team_ratings = {num:{} for num in range(16,22)}
 main_sort = {num:[] for num in range(1,21)}
 main_probability = {num:{} for num in range(1,21)}
